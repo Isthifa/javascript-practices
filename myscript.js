@@ -444,5 +444,122 @@ const mybio={
     city:"delhi"
 }
 for(let x in mybio){
-    console.log(x);
+    console.log(mybio[x]);
 }
+
+
+//fetch api is javascript 
+
+//example
+
+async function getData(){
+   await fetch("https://jsonplaceholder.typicode.com/users").then((r)=>r.json()).then((result)=>{
+        console.log(result);
+    })
+} //async and await are used to make the function asynchronous and to wait for the function to complete it behaves as a synchronous function
+
+getData();
+
+//another example
+let myd=[];
+
+let myworkdata=new Map();
+
+
+async function getData(){
+    let response=await fetch("https://jsonplaceholder.typicode.com/users");
+    let result=await response.json();
+    result.forEach((e)=>{
+        myworkdata.set(e.name,e.email);
+    })
+}
+
+getData();
+console.log(myd);
+console.log(myworkdata);
+
+
+//map in javascript key value pair
+//example
+let mymap=new Map();
+mymap.set("name","john");
+mymap.set("age",20);
+mymap.set("city","delhi");
+console.log(mymap);
+console.log(mymap.get("name"));
+console.log(mymap.get("age"));
+console.log(mymap.get("city"));
+console.log(mymap.has("name"));
+console.log(mymap.has("age"));
+console.log(mymap.has("city"));
+//collections in javascript
+//set
+//it is used to store unique values
+//example
+let myset=new Set();
+myset.add(1);
+myset.add(2);
+myset.add(3);
+myset.add(4);
+myset.add(5);
+
+console.log(myset);
+console.log(myset.has(1));
+
+//hashmap
+//it is used to store key value pairs
+//example
+let mymaps=new Map();
+mymaps.set("name","john");
+mymaps.set("age",20);
+mymaps.set("city","delhi");
+console.log(mymap);
+
+
+let prom=new Promise((resolve,reject)=>{
+    let dataloaded=true;
+    if(dataloaded)
+    {
+        resolve("true")
+    }else{
+        reject("false");
+    }
+})
+.then((e)=>{
+    console.log(e)
+}
+).catch((error)=>{
+    console.log(error)
+})
+
+//another example
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//react hooks is a feature that allows us to use state and other react features without writing a class
+//did mount is a lifecycle method that is called after the component is mounted
+//did update is a lifecycle method that is called after the component is updated
+//will unmount is a lifecycle method that is called before the component is unmounted
+//useEffect is a hook that allows us to use lifecycle methods in functional components
+//useEffect is a hook that allows us to use state in functional components
+//useEffect is a hook that allows us to use other react features in functional components
